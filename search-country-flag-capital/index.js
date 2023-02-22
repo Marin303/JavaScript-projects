@@ -12,20 +12,20 @@ function getData() {
       data.forEach((country) => {
         if (country.name.common.toLowerCase().includes(name.toLowerCase())) {
           const countryLi = document.createElement("li");
-          const zastava = document.createElement("img");
+          const flag = document.createElement("img");
           const name = document.createElement("span");
           const capitalSpan = document.createElement("span");
 
-          zastava.src = country.flags.png;
-          zastava.alt = `${country.name.official}`;
-          zastava.width = 30;
+          flag.src = country.flags.png;
+          flag.alt = `${country.name.official}`;
+          flag.width = 30;
 
           name.textContent = country.name.official;
           capitalSpan.textContent = `- ${country.capital} - `;
 
           countryLi.appendChild(name);
           countryLi.appendChild(capitalSpan);
-          countryLi.appendChild(zastava);
+          countryLi.appendChild(flag);
           countriesList.appendChild(countryLi);
         }
       });
